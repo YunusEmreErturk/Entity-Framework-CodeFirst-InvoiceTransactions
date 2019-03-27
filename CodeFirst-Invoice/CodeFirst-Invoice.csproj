@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37910EFD-D38E-4843-AF54-C5CF23FD8670}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CodeFirst_Invoice</RootNamespace>
+    <AssemblyName>CodeFirst-Invoice</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormCities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCities.Designer.cs">
+      <DependentUpon>FormCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCounties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCounties.Designer.cs">
+      <DependentUpon>FormCounties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomers.Designer.cs">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\City.cs" />
+    <Compile Include="Entity\County.cs" />
+    <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\InvoiceDetails.cs" />
+    <Compile Include="Entity\InvoiceHeader.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\Unit.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceContext.cs" />
+    <Compile Include="FormInvoiceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInvoiceDetails.Designer.cs">
+      <DependentUpon>FormInvoiceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInvoiceHeaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInvoiceHeaders.Designer.cs">
+      <DependentUpon>FormInvoiceHeaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducts.Designer.cs">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903241724417_InvoiceDB.cs" />
+    <Compile Include="Migrations\201903241724417_InvoiceDB.Designer.cs">
+      <DependentUpon>201903241724417_InvoiceDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903241847553_InvoiceDBAddCountyName.cs" />
+    <Compile Include="Migrations\201903241847553_InvoiceDBAddCountyName.Designer.cs">
+      <DependentUpon>201903241847553_InvoiceDBAddCountyName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903241911333_InvoiceDBAddCityIDForCounty.cs" />
+    <Compile Include="Migrations\201903241911333_InvoiceDBAddCityIDForCounty.Designer.cs">
+      <DependentUpon>201903241911333_InvoiceDBAddCityIDForCounty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903250656388_InvoiceDBDeleteCityAndCountyDescriptonAndUpdateDeliveryNote.cs" />
+    <Compile Include="Migrations\201903250656388_InvoiceDBDeleteCityAndCountyDescriptonAndUpdateDeliveryNote.Designer.cs">
+      <DependentUpon>201903250656388_InvoiceDBDeleteCityAndCountyDescriptonAndUpdateDeliveryNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903251942306_InvoiceDBInvoiceDateisNull.cs" />
+    <Compile Include="Migrations\201903251942306_InvoiceDBInvoiceDateisNull.Designer.cs">
+      <DependentUpon>201903251942306_InvoiceDBInvoiceDateisNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUnits.Designer.cs">
+      <DependentUpon>FormUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectedProduct.cs" />
+    <EmbeddedResource Include="FormCities.resx">
+      <DependentUpon>FormCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCounties.resx">
+      <DependentUpon>FormCounties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomers.resx">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInvoiceDetails.resx">
+      <DependentUpon>FormInvoiceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInvoiceHeaders.resx">
+      <DependentUpon>FormInvoiceHeaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducts.resx">
+      <DependentUpon>FormProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903241724417_InvoiceDB.resx">
+      <DependentUpon>201903241724417_InvoiceDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903241847553_InvoiceDBAddCountyName.resx">
+      <DependentUpon>201903241847553_InvoiceDBAddCountyName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903241911333_InvoiceDBAddCityIDForCounty.resx">
+      <DependentUpon>201903241911333_InvoiceDBAddCityIDForCounty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903250656388_InvoiceDBDeleteCityAndCountyDescriptonAndUpdateDeliveryNote.resx">
+      <DependentUpon>201903250656388_InvoiceDBDeleteCityAndCountyDescriptonAndUpdateDeliveryNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903251942306_InvoiceDBInvoiceDateisNull.resx">
+      <DependentUpon>201903251942306_InvoiceDBInvoiceDateisNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormUnits.resx">
+      <DependentUpon>FormUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
